@@ -8,7 +8,7 @@ In the app You can:
 
 click on layer, or change it color with mouseover.
 
-<img src="map1.png" alt="Logo" width="250">
+<img src="map2.png" alt="Logo" width="250">
 
 
 # Getting Started with Create React App
