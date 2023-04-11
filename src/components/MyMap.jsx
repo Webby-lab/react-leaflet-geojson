@@ -6,6 +6,41 @@ import "leaflet/dist/leaflet.css";
 
 class MyMap extends Component {
     state = {}
+
+    countryStyle = {
+        fillColor : "red",
+        fillOpacity: 1,
+        color: "black",
+        weight: 2,
+        dashArray: 1,
+    };
+
+    onCountryClick = (event) => {
+                event.target.setStyle({
+                    color: "green",
+                    fillColor: "yellow",
+                    fillOpacity: 0.1
+                });
+            };
+        
+    onCountryMouseover = (event) => {
+        event.target.setStyle({
+            fillColor: "red",
+            fillOpacity: 0.5
+        });
+    };        
+
+    onEachCountry = (country, layer) => {
+        const countryName = country.properties.ADMIN;
+        layer.bindPopup(countryName + ": Christina was here!");
+
+        layer.on({
+            click: this.onCountryClick,
+            mouseover: this.onCountryMouseover,
+        });
+    };
+
+
     render() {
         return (
             <div>
@@ -15,9 +50,10 @@ class MyMap extends Component {
 
                     <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" 
-                    />
-                    <GeoJSON data={mapdata.features}/>
+                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+
+                    <GeoJSON style={this.countryStyle} data={mapdata.features} onEachFeature={this.onEachCountry}/>
+
                 </MapContainer>
             </div>
         );
