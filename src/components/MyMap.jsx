@@ -36,7 +36,7 @@ class MyMap extends Component {
             fillOpacity: 0.5
         });
     };        
-
+    
     onEachCountry = (country, layer) => {
         const countryName = country.properties.ADMIN;
         layer.bindPopup(countryName + ": Christina was here!");
