@@ -1,3 +1,16 @@
+# React & Leaflet with GeoJSON 
+
+**A small React project displaying word map with GeoJSON layer**
+
+<img src="map1.png" alt="Logo" width="250">
+
+In the app You can:
+
+click on layer, or change it color with mouseover.
+
+<img src="map2.png" alt="Logo" width="250">
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
